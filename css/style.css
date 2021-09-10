@@ -36,6 +36,7 @@ body {
    width: 70%;
    float: right;
    background-color: #e5ddd5;
+   background-image: url("../img/mine.jpg");
 }
 
 .user-info {
@@ -103,21 +104,19 @@ body {
    color: grey;
 }
 
-.search {
+.search-container {
    display: flex;
    justify-content: center;
    align-items: center;
    height: 5%;
-   background-color: #eaeaea;
-   /* padding: 0px 10px; */
+   background-color: #fafafa;
 }
 
-.search-1 {
-   height: 70%;
-   width: 95%;
+.search {
    display: flex;
    align-items: center;
-   background-color: red;
+   height: 70%;
+   width: 95%;
 }
 
 .search-button {
@@ -127,19 +126,23 @@ body {
    height: 100%;
    width: 20%;
    background-color: white;
-   /* padding: 8px; */
+   border: 0.1px solid lightgrey;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+   cursor: pointer;
 }
 
 .fa-search {
    color: #b6b9bb;
-   cursor: pointer;
 }
 
 .search input {
    height: 100%;
    width: 80%;
-   /* margin-left: 10px; */
-   border: none;
+   border: 1px solid lightgrey;
+   border-left: none;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
    padding: 0px 10px;
 }
 
