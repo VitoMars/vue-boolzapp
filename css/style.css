@@ -102,3 +102,47 @@ body {
    text-decoration: underline;
    color: grey;
 }
+
+.search {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 5%;
+   background-color: #eaeaea;
+   /* padding: 0px 10px; */
+}
+
+.search-1 {
+   height: 70%;
+   width: 95%;
+   display: flex;
+   align-items: center;
+   background-color: red;
+}
+
+.search-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   width: 20%;
+   background-color: white;
+   /* padding: 8px; */
+}
+
+.fa-search {
+   color: #b6b9bb;
+   cursor: pointer;
+}
+
+.search input {
+   height: 100%;
+   width: 80%;
+   /* margin-left: 10px; */
+   border: none;
+   padding: 0px 10px;
+}
+
+.search input:focus-visible {
+   outline: none;
+}
