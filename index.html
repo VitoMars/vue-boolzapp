@@ -63,8 +63,12 @@
                <!-- Lista Contatti -->
                <div class="contacts">
                   <div class="contact">
-                     <!-- <img :src="img/avatar'${contacts.avatar}'.jpg" alt="" /> -->
-                     <div class="name">{{text}}</div>
+                     <img
+                        v-for="contact in contacts"
+                        :src="'img/avatar' + 'contact.avatar' + '.jpg'"
+                        alt=""
+                     />
+                     <div v-for="contact in contacts">{{contact.name}}</div>
                   </div>
                </div>
             </div>
