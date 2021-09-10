@@ -5,6 +5,10 @@
 }
 /* -------------------------------------------------- */
 
+body {
+   font-family: "Lato";
+}
+
 .background {
    display: flex;
    justify-content: center;
@@ -32,4 +36,41 @@
    width: 70%;
    float: right;
    background-color: #e5ddd5;
+}
+
+.user-info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 8%;
+   width: 100%;
+   background-color: #eaeaea;
+   padding: 0px 10px;
+}
+
+.user {
+   display: flex;
+   align-items: center;
+   height: 100%;
+}
+
+.my-avatar {
+   height: 70%;
+   border-radius: 50%;
+}
+
+.user-name {
+   margin: 0px 10px;
+}
+
+.buttons {
+   display: flex;
+   justify-content: end;
+   cursor: pointer;
+}
+
+.buttons i {
+   padding: 0px 10px;
+   font-size: 20px;
+   color: #b1b1b1;
 }
