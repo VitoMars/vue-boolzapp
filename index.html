@@ -62,13 +62,14 @@
                </div>
                <!-- Lista Contatti -->
                <div class="contacts">
-                  <div class="contact">
+                  <div v-for="contact in contacts" class="contact">
                      <img
-                        v-for="contact in contacts"
-                        :src="'img/avatar' + 'contact.avatar' + '.jpg'"
+                        :src="'img/avatar' + contact.avatar + '.jpg'"
                         alt=""
                      />
-                     <div v-for="contact in contacts">{{contact.name}}</div>
+                     <div class="text">
+                        <div>{{contact.name}}</div>
+                     </div>
                   </div>
                </div>
             </div>

@@ -149,3 +149,16 @@ body {
 .search input:focus-visible {
    outline: none;
 }
+
+.contact {
+   display: flex;
+   padding: 10px;
+   border-top: 1px solid lightgray;
+   cursor: pointer;
+}
+
+.contact img {
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+}
