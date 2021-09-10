@@ -25,7 +25,7 @@
    </head>
    <body>
       <div class="background">
-         <div class="main-container">
+         <div id="root" class="main-container">
             <!-- Sezione Sinistra -->
             <div class="container-left">
                <!-- Barra utente -->
@@ -58,6 +58,13 @@
                         type="text"
                         placeholder="Cerca o inizia una nuova chat"
                      />
+                  </div>
+               </div>
+               <!-- Lista Contatti -->
+               <div class="contacts">
+                  <div class="contact">
+                     <!-- <img :src="img/avatar'${contacts.avatar}'.jpg" alt="" /> -->
+                     <div class="name">{{text}}</div>
                   </div>
                </div>
             </div>

@@ -126,7 +126,7 @@ body {
    height: 100%;
    width: 20%;
    background-color: white;
-   border: 0.1px solid lightgrey;
+   border: 1px solid lightgrey;
    border-top-left-radius: 5px;
    border-bottom-left-radius: 5px;
    cursor: pointer;
