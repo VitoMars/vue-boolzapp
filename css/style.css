@@ -28,7 +28,7 @@ body {
    height: 100%;
    width: 30%;
    float: left;
-   background-color: #8edafc;
+   background-color: white;
 }
 
 .container-right {
@@ -73,4 +73,32 @@ body {
    padding: 0px 10px;
    font-size: 20px;
    color: #b1b1b1;
+}
+
+.enable-notifications {
+   display: flex;
+   align-items: center;
+   height: 10%;
+   width: 100%;
+   padding: 0px 10px;
+   background-color: #8edafc;
+}
+
+.enable-notifications i {
+   font-size: 20px;
+   color: #8edafc;
+   background-color: white;
+   border-radius: 50%;
+   padding: 12px 10px;
+}
+
+.text {
+   padding: 10px;
+}
+
+.little-text {
+   font-size: 14px;
+   cursor: pointer;
+   text-decoration: underline;
+   color: grey;
 }
