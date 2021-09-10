@@ -1,0 +1,35 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+/* -------------------------------------------------- */
+
+.background {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 100vw;
+   background: linear-gradient(to bottom, #009688 15%, #dcdbd3 0%);
+}
+
+.main-container {
+   height: 90%;
+   width: 80%;
+   background-color: #eaeaea;
+}
+
+.container-left {
+   height: 100%;
+   width: 30%;
+   float: left;
+   background-color: #8edafc;
+}
+
+.container-right {
+   height: 100%;
+   width: 70%;
+   float: right;
+   background-color: #e5ddd5;
+}
