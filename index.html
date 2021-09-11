@@ -31,7 +31,7 @@
                <!-- Barra utente -->
                <div class="user-info">
                   <div class="user">
-                     <img class="my-avatar" src="img/avatar_io.jpg" alt="" />
+                     <img class="avatar" src="img/avatar_io.jpg" alt="" />
                      <div class="user-name">Vito Marseglia</div>
                   </div>
                   <div class="buttons">
@@ -61,9 +61,14 @@
                   </div>
                </div>
                <!-- Lista Contatti -->
-               <div class="contacts">
-                  <div v-for="contact in contacts" class="contact">
+               <div class="contacts-list">
+                  <div
+                     v-for="(contact, index) in contacts"
+                     class="contact border-top"
+                     @click="getContactImage(index)"
+                  >
                      <img
+                        class="avatar"
                         :src="'img/avatar' + contact.avatar + '.jpg'"
                         alt=""
                      />
@@ -74,7 +79,36 @@
                </div>
             </div>
             <!-- Sezione Destra -->
-            <div class="container-right"></div>
+            <div class="container-right">
+               <!-- Barra User -->
+               <div class="user-info">
+                  <div class="contact">
+                     <img class="avatar" src="img/avatar_1.jpg" alt="" />
+                     <div class="text">
+                        <div class="user-name">Michele</div>
+                        <div class="last-access">Ultimo accesso oggi alle</div>
+                     </div>
+                  </div>
+                  <div class="buttons">
+                     <i class="fas fa-search"></i>
+                     <i class="fas fa-paperclip"></i>
+                     <i class="fas fa-ellipsis-v"></i>
+                  </div>
+               </div>
+               <!-- Chat -->
+               <div class="chat-area">
+                  <div class="boh" v-for="contact in contacts">
+                     <!-- <div class="your-message">{{messages.message}}</div> -->
+                     <div class="my-message"></div>
+                  </div>
+               </div>
+               <!-- Input text-bar -->
+               <div class="text-bar">
+                  <i class="far fa-smile"></i>
+                  <input type="text" placeholder="Scrivi un messaggio" />
+                  <i class="fas fa-microphone"></i>
+               </div>
+            </div>
          </div>
       </div>
       <script src="js/main.js"></script>
