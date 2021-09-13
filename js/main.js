@@ -95,4 +95,8 @@ const app = new Vue({
          return this.imagePath;
       },
    },
+
+   mounted() {
+      this.imagePath = `./img/avatar${this.contacts[0].avatar}.jpg`;
+   },
 });
