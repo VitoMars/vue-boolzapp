@@ -218,19 +218,28 @@ input:focus-visible {
 
 .my-message,
 .your-message {
+   position: relative;
+   display: flex;
+   align-items: center;
    border-radius: 10px;
+   padding: 0px 10px;
 }
 
 .my-message {
-   float: right;
-   height: 50px;
-   width: 200px;
-   background-color: lightgreen;
+   min-height: 50px;
+   min-width: 200px;
+   background-color: #d5f9ba;
 }
 
 .your-message {
-   float: left;
-   height: 50px;
-   width: 200px;
+   min-height: 50px;
+   min-width: 200px;
    background-color: white;
+}
+
+.messageDate {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   font-size: 14px;
 }

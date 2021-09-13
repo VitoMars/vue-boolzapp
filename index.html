@@ -100,10 +100,20 @@
                <!-- Chat -->
                <div class="chat-area">
                   <div class="sent">
-                     <div class="my-message"></div>
+                     <div class="my-message">
+                        {{contacts[0].messages[0].message}}
+                        <div class="messageDate last-access">
+                           10/01/2020 15:30:55
+                        </div>
+                     </div>
                   </div>
                   <div class="received">
-                     <div class="your-message"></div>
+                     <div class="your-message">
+                        No
+                        <div class="messageDate last-access">
+                           10/01/2020 15:30:55
+                        </div>
+                     </div>
                   </div>
                   <!-- <div class="your-message">{{messages.message}}</div> -->
                </div>
