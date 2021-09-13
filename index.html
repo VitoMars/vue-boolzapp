@@ -86,7 +86,7 @@
                   <div class="user">
                      <img class="avatar" :src="getContactImage()" alt="" />
                      <div class="text">
-                        <div class="user-name">{{currentContact?.name}}</div>
+                        <div class="user-name">{{currentContact.name}}</div>
                         <div class="last-access">
                            Ultimo accesso oggi alle {{getContactDate()}}
                         </div>
@@ -102,7 +102,7 @@
                <div class="chat-area">
                   <div
                      class="sent"
-                     v-for="text in currentContact?.messages"
+                     v-for="text in currentContact.messages"
                      v-if="text.status == `sent`"
                   >
                      <div class="my-message">
