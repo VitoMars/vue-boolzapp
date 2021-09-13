@@ -100,8 +100,8 @@
                <!-- Chat -->
                <div class="chat-area">
                   <div class="sent">
-                     <div class="my-message">
-                        {{contacts[0].messages[0].message}}
+                     <div v-for="text in contacts.messages" class="my-message">
+                        {{text.message}}
                         <div class="messageDate last-access">
                            10/01/2020 15:30:55
                         </div>
