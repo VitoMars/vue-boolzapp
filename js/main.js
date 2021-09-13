@@ -89,11 +89,10 @@ const app = new Vue({
       imagePath: "",
    },
    methods: {
-      getContactImage(index, imagePath) {
+      getContactImage(index) {
          const contact = this.contacts[index];
-         imagePath = `./img/avatar${contact.avatar}.jpg`;
-         console.log(imagePath);
-         return imagePath;
+         this.imagePath = `./img/avatar${contact.avatar}.jpg`;
+         return this.imagePath;
       },
    },
 });
