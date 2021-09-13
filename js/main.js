@@ -99,7 +99,9 @@ const app = new Vue({
          }
       },
       getContactDate() {
-         return this.currentContact.messages[0].date;
+         if (this.currentContact != null) {
+            return this.currentContact.messages[0].date;
+         }
       },
    },
 

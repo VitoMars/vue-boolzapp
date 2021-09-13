@@ -99,26 +99,26 @@
                </div>
                <!-- Chat -->
                <div class="chat-area">
-                  <div class="sent">
-                     <div
-                        v-for="text in currentContact?.messages"
-                        class="my-message"
-                     >
+                  <div
+                     class="sent"
+                     v-for="text in currentContact?.messages"
+                     v-if="text.status == `sent`"
+                  >
+                     <div class="my-message">
                         {{text.message}}
-                        <div class="messageDate last-access">
-                           10/01/2020 15:30:55
-                        </div>
+                        <div class="messageDate last-access">{{text.date}}</div>
                      </div>
                   </div>
-                  <div class="received">
+                  <div
+                     class="received"
+                     v-for="text in currentContact?.messages"
+                     v-if="text.status == `received`"
+                  >
                      <div class="your-message">
-                        No
-                        <div class="messageDate last-access">
-                           10/01/2020 15:30:55
-                        </div>
+                        {{text.message}}
+                        <div class="messageDate last-access">{{text.date}}</div>
                      </div>
                   </div>
-                  <!-- <div class="your-message">{{messages.message}}</div> -->
                </div>
                <!-- Input text-bar -->
                <div class="text-bar">
