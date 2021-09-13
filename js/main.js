@@ -86,31 +86,25 @@ const app = new Vue({
             ],
          },
       ],
-      imagePath: "",
-      nameContainer: "",
+      currentContact: null,
       lastAccess: "",
    },
    methods: {
-      getContactImage(index) {
-         const contact = this.contacts[index];
-         this.imagePath = `./img/avatar${contact.avatar}.jpg`;
-         return this.imagePath;
+      setCurrentUser(contact) {
+         this.currentContact = contact;
       },
-      getContactName(index) {
-         const contact = this.contacts[index];
-         this.nameContainer = contact.name;
-         return this.nameContainer;
+      getContactImage() {
+         if (this.currentContact != null) {
+            return `./img/avatar${this.currentContact.avatar}.jpg`;
+         }
       },
-      getContactDate(index) {
-         const contact = this.contacts[index];
-         this.lastAccess = contact.messages[0].date;
-         return this.lastAccess;
+      getContactDate() {
+         return this.currentContact.messages[0].date;
       },
    },
 
    mounted() {
-      this.imagePath = `./img/avatar${this.contacts[0].avatar}.jpg`;
-      this.nameContainer = this.contacts[0].name;
-      this.lastAccess = this.contacts[0].messages[0].date;
+      this.currentContact = this.contacts[0];
+      this.lastAccess = this.currentContact.messages[0].date;
    },
 });

@@ -65,7 +65,7 @@
                   <div
                      v-for="(contact, index) in contacts"
                      class="contact border-top"
-                     @click="getContactImage(index), getContactName(index), getContactDate(index)"
+                     @click="setCurrentUser(contact), getContactDate()"
                   >
                      <img
                         class="avatar"
@@ -83,11 +83,11 @@
                <!-- Barra User -->
                <div class="user-info">
                   <div class="contact">
-                     <img class="avatar" :src="imagePath" alt="" />
+                     <img class="avatar" :src="getContactImage()" alt="" />
                      <div class="text">
-                        <div class="user-name">{{nameContainer}}</div>
+                        <div class="user-name">{{currentContact?.name}}</div>
                         <div class="last-access">
-                           Ultimo accesso oggi alle {{lastAccess}}
+                           Ultimo accesso oggi alle {{getContactDate()}}
                         </div>
                      </div>
                   </div>
@@ -100,7 +100,10 @@
                <!-- Chat -->
                <div class="chat-area">
                   <div class="sent">
-                     <div v-for="text in contacts.messages" class="my-message">
+                     <div
+                        v-for="text in currentContact?.messages"
+                        class="my-message"
+                     >
                         {{text.message}}
                         <div class="messageDate last-access">
                            10/01/2020 15:30:55
