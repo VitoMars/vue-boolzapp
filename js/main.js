@@ -87,6 +87,7 @@ const app = new Vue({
          },
       ],
       imagePath: "",
+      nameContainer: "",
    },
    methods: {
       getContactImage(index) {
@@ -94,9 +95,15 @@ const app = new Vue({
          this.imagePath = `./img/avatar${contact.avatar}.jpg`;
          return this.imagePath;
       },
+      getContactName(index) {
+         const contact = this.contacts[index];
+         this.nameContainer = contact.name;
+         return this.nameContainer;
+      },
    },
 
    mounted() {
       this.imagePath = `./img/avatar${this.contacts[0].avatar}.jpg`;
+      this.nameContainer = this.contacts[0].name;
    },
 });
