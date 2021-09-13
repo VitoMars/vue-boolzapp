@@ -88,6 +88,7 @@ const app = new Vue({
       ],
       currentContact: null,
       lastAccess: "",
+      lastMessage: "",
    },
    methods: {
       setCurrentUser(contact) {
@@ -99,8 +100,9 @@ const app = new Vue({
          }
       },
       getContactDate() {
+         this.lastMessage = this.currentContact.messages.length - 1;
          if (this.currentContact != null) {
-            return this.currentContact.messages[0].date;
+            return this.currentContact.messages[this.lastMessage].date;
          }
       },
    },
