@@ -103,8 +103,7 @@ const app = new Vue({
       },
       getContactDate(index) {
          const contact = this.contacts[index];
-         this.lastAccess = contact.messages[index].date;
-         console.log(this.lastAccess);
+         this.lastAccess = contact.messages[0].date;
          return this.lastAccess;
       },
    },
