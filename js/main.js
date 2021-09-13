@@ -87,7 +87,6 @@ const app = new Vue({
          },
       ],
       currentContact: null,
-      lastAccess: "",
       lastMessage: "",
    },
    methods: {
@@ -95,20 +94,14 @@ const app = new Vue({
          this.currentContact = contact;
       },
       getContactImage() {
-         if (this.currentContact != null) {
-            return `./img/avatar${this.currentContact.avatar}.jpg`;
-         }
+         return `./img/avatar${this.currentContact.avatar}.jpg`;
       },
       getContactDate() {
          this.lastMessage = this.currentContact.messages.length - 1;
-         if (this.currentContact != null) {
-            return this.currentContact.messages[this.lastMessage].date;
-         }
+         return this.currentContact.messages[this.lastMessage].date;
       },
    },
-
-   mounted() {
+   created() {
       this.currentContact = this.contacts[0];
-      this.lastAccess = this.currentContact.messages[0].date;
    },
 });
