@@ -65,7 +65,7 @@
                   <div
                      v-for="(contact, index) in contacts"
                      class="contact border-top"
-                     @click="getContactImage(index), getContactName(index)"
+                     @click="getContactImage(index), getContactName(index), getContactDate(index)"
                   >
                      <img
                         class="avatar"
@@ -86,7 +86,9 @@
                      <img class="avatar" :src="imagePath" alt="" />
                      <div class="text">
                         <div class="user-name">{{nameContainer}}</div>
-                        <div class="last-access">Ultimo accesso oggi alle</div>
+                        <div class="last-access">
+                           Ultimo accesso oggi alle {{lastAccess}}
+                        </div>
                      </div>
                   </div>
                   <div class="buttons">

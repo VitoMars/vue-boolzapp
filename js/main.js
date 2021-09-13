@@ -88,6 +88,7 @@ const app = new Vue({
       ],
       imagePath: "",
       nameContainer: "",
+      lastAccess: "",
    },
    methods: {
       getContactImage(index) {
@@ -100,10 +101,17 @@ const app = new Vue({
          this.nameContainer = contact.name;
          return this.nameContainer;
       },
+      getContactDate(index) {
+         const contact = this.contacts[index];
+         this.lastAccess = contact.messages[index].date;
+         console.log(this.lastAccess);
+         return this.lastAccess;
+      },
    },
 
    mounted() {
       this.imagePath = `./img/avatar${this.contacts[0].avatar}.jpg`;
       this.nameContainer = this.contacts[0].name;
+      this.lastAccess = this.contacts[0].messages[0].date;
    },
 });
