@@ -178,8 +178,19 @@ input:focus-visible {
 }
 
 .chat-area {
+   display: flex;
+   flex-direction: column;
    height: 82%;
    overflow-y: scroll;
+   padding: 5% 10%;
+}
+
+.sent {
+   align-self: flex-end;
+}
+
+.received {
+   align-self: flex-start;
 }
 
 .text-bar {
@@ -203,4 +214,23 @@ input:focus-visible {
    border: 1px solid lightgrey;
    border-radius: 5px;
    padding: 0px 10px;
+}
+
+.my-message,
+.your-message {
+   border-radius: 10px;
+}
+
+.my-message {
+   float: right;
+   height: 50px;
+   width: 200px;
+   background-color: lightgreen;
+}
+
+.your-message {
+   float: left;
+   height: 50px;
+   width: 200px;
+   background-color: white;
 }
