@@ -86,11 +86,13 @@ const app = new Vue({
             ],
          },
       ],
+      imagePath: "",
    },
    methods: {
-      getContactImage(index) {
+      getContactImage(index, imagePath) {
          const contact = this.contacts[index];
-         const imagePath = `./img/avatar${contact.avatar}.jpg`;
+         imagePath = `./img/avatar${contact.avatar}.jpg`;
+         console.log(imagePath);
          return imagePath;
       },
    },
