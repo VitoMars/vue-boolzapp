@@ -88,6 +88,7 @@ const app = new Vue({
       ],
       currentContact: null,
       lastMessage: "",
+      msg: "",
    },
    methods: {
       setCurrentUser(contact) {
@@ -99,6 +100,14 @@ const app = new Vue({
       getContactDate() {
          this.lastMessage = this.currentContact.messages.length - 1;
          return this.currentContact.messages[this.lastMessage].date;
+      },
+      sendMessage() {
+         this.currentContact.messages.push({
+            date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
+            message: this.msg,
+            status: "sent",
+         });
+         this.msg = "";
       },
    },
    created() {

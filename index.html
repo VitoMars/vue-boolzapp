@@ -21,6 +21,8 @@
       />
       <!-- Script Vue.js -->
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <!-- Libreria Day.js -->
+      <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
       <title>BoolZapp</title>
    </head>
    <body>
@@ -63,8 +65,8 @@
                <!-- Lista Contatti -->
                <div class="contacts-list">
                   <div
-                     v-for="(contact, index) in contacts"
-                     :class="{selected : contact == currentContact}"
+                     v-for="contact in contacts"
+                     :class="(contact == currentContact) ? `selected` : ``"
                      class="contact border-top"
                      @click="setCurrentUser(contact), getContactDate()"
                   >
@@ -101,30 +103,29 @@
                <!-- Chat -->
                <div class="chat-area">
                   <div
-                     class="sent"
+                     class="message-row"
+                     :class="(text.status == `sent`) ? `sent` : `received`"
                      v-for="text in currentContact.messages"
-                     v-if="text.status == `sent`"
                   >
-                     <div class="my-message">
-                        {{text.message}}
-                        <div class="messageDate last-access">{{text.date}}</div>
-                     </div>
-                  </div>
-                  <div
-                     class="received"
-                     v-for="text in currentContact?.messages"
-                     v-if="text.status == `received`"
-                  >
-                     <div class="your-message">
-                        {{text.message}}
-                        <div class="messageDate last-access">{{text.date}}</div>
-                     </div>
+                     <span
+                        :class="(text.status == `sent`) ? `my-message` : `your-message`"
+                     >
+                        {{ text.message }}
+                        <span class="messageDate last-access">
+                           {{ text.date }}
+                        </span>
+                     </span>
                   </div>
                </div>
                <!-- Input text-bar -->
                <div class="text-bar">
                   <i class="far fa-smile"></i>
-                  <input type="text" placeholder="Scrivi un messaggio" />
+                  <input
+                     type="text"
+                     placeholder="Scrivi un messaggio"
+                     v-model="msg"
+                     @keydown.enter="sendMessage"
+                  />
                   <i class="fas fa-microphone"></i>
                </div>
             </div>
