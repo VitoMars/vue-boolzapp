@@ -117,7 +117,7 @@ const app = new Vue({
          setTimeout(() => {
             this.currentContact.messages.push({
                date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
-               message: "ok",
+               message: "Ciao 😀",
                status: "received",
             });
          }, 1000);
