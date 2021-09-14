@@ -59,13 +59,15 @@
                      <input
                         type="text"
                         placeholder="Cerca o inizia una nuova chat"
+                        v-model="searchedUser"
+                        @keyup="searchContact()"
                      />
                   </div>
                </div>
                <!-- Lista Contatti -->
                <div class="contacts-list">
                   <div
-                     v-for="contact in contacts"
+                     v-for="contact in filteredContacts"
                      :class="(contact == currentContact) ? `selected` : ``"
                      class="contact border-top"
                      @click="setCurrentUser(contact), getContactDate()"

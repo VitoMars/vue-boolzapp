@@ -89,6 +89,8 @@ const app = new Vue({
       currentContact: null,
       lastMessage: "",
       msg: "",
+      searchedUser: "",
+      filteredContacts: "",
    },
    methods: {
       setCurrentUser(contact) {
@@ -120,8 +122,14 @@ const app = new Vue({
             });
          }, 1000);
       },
+      searchContact() {
+         this.filteredContacts = this.contacts.filter((contact) =>
+            contact.name.toLowerCase().includes(this.searchedUser.toLowerCase())
+         );
+      },
    },
    created() {
       this.currentContact = this.contacts[0];
+      this.filteredContacts = this.contacts;
    },
 });
