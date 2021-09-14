@@ -102,11 +102,13 @@ const app = new Vue({
          return this.currentContact.messages[this.lastMessage].date;
       },
       sendMessage() {
-         this.currentContact.messages.push({
-            date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
-            message: this.msg,
-            status: "sent",
-         });
+         if (this.msg != "") {
+            this.currentContact.messages.push({
+               date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
+               message: this.msg,
+               status: "sent",
+            });
+         }
          this.msg = "";
       },
    },
