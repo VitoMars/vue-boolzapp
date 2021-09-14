@@ -111,6 +111,15 @@ const app = new Vue({
          }
          this.msg = "";
       },
+      receiveMessage() {
+         setTimeout(() => {
+            this.currentContact.messages.push({
+               date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
+               message: "ok",
+               status: "received",
+            });
+         }, 1000);
+      },
    },
    created() {
       this.currentContact = this.contacts[0];

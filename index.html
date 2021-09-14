@@ -90,7 +90,7 @@
                      <div class="text">
                         <div class="user-name">{{currentContact.name}}</div>
                         <div class="last-access">
-                           Ultimo accesso oggi alle {{getContactDate()}}
+                           Ultimo messaggio: {{getContactDate()}}
                         </div>
                      </div>
                   </div>
@@ -124,7 +124,7 @@
                      type="text"
                      placeholder="Scrivi un messaggio"
                      v-model="msg"
-                     @keydown.enter="sendMessage"
+                     @keydown.enter="sendMessage(), receiveMessage()"
                   />
                   <i class="fas fa-microphone"></i>
                </div>
