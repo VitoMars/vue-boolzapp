@@ -146,22 +146,17 @@ const app = new Vue({
          );
       },
       // Metodo per far comparire il Dropdown-menu nei messaggi
-      toggleDropdown(event) {
-         // const elDropdowns = document.querySelectorAll(".dropdown-menu");
+      toggleDropdown(index) {
+         const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
          if (
-            event.currentTarget.nextElementSibling.style.display === "" ||
-            event.currentTarget.nextElementSibling.style.display === "none"
+            elDropdowns[index].style.display === "" ||
+            elDropdowns[index].style.display === "none"
          ) {
-            event.currentTarget.nextElementSibling.style.display = "flex";
-         } else if (
-            event.currentTarget.nextElementSibling.style.display === "flex"
-         ) {
-            event.currentTarget.nextElementSibling.style.display = "none";
+            elDropdowns[index].style.display = "flex";
+         } else if (elDropdowns[index].style.display === "flex") {
+            elDropdowns[index].style.display = "none";
          }
-         event.currentTarget.nextElementSibling.focus();
-
-         console.log(event);
       },
       // Metodo per eliminare un messaggio
       deleteMessage(index) {
