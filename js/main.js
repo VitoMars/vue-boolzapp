@@ -93,20 +93,20 @@ const app = new Vue({
       filteredContacts: "",
    },
    methods: {
+      // Metodo per settare il contatto selezionato
       setCurrentUser(contact) {
          this.currentContact = contact;
       },
+      // Metodo per ottenere l'immagine del contatto selezionato
       getContactImage() {
          return `./img/avatar${this.currentContact.avatar}.jpg`;
       },
+      // Metodo per ottenere la data
       getContactDate() {
          this.lastMessage = this.currentContact.messages.length - 1;
          return this.currentContact.messages[this.lastMessage].date;
       },
-      scrollToEnd() {
-         var container = this.$el.querySelector(".chat-area");
-         container.scrollTop = container.scrollHeight;
-      },
+      // Metodo per mandare un messaggio
       sendMessage() {
          if (this.msg != "") {
             this.currentContact.messages.push({
@@ -118,6 +118,7 @@ const app = new Vue({
          this.msg = "";
          this.scrollToEnd();
       },
+      // Metodo per ricevere un messaggio dopo 1 secondo
       receiveMessage() {
          setTimeout(() => {
             this.currentContact.messages.push({
@@ -125,14 +126,23 @@ const app = new Vue({
                message: "Ciao 😀",
                status: "received",
             });
+            this.scrollToEnd();
          }, 1000);
-         this.scrollToEnd();
       },
+      // Metodo per aggiornare la scrollBar dopo 100 ms
+      scrollToEnd() {
+         setTimeout(() => {
+            var container = this.$el.querySelector(".chat-area");
+            container.scrollTop = container.scrollHeight;
+         }, 100);
+      },
+      // Metodo per cercare fra i contatti
       searchContact() {
          this.filteredContacts = this.contacts.filter((contact) =>
             contact.name.toLowerCase().includes(this.searchedUser.toLowerCase())
          );
       },
+      // Metodo per far comparire il Dropdown-menu nei messaggi
       toggleDropdown(index) {
          const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
@@ -146,6 +156,7 @@ const app = new Vue({
          }
       },
    },
+   // Settaggi a inizio creazione
    created() {
       this.currentContact = this.contacts[0];
       this.filteredContacts = this.contacts;
