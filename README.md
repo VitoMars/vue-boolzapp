@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------------
 
-✔️ Milestone 1
+✔️ Milestone 1:
 ● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e
 dall’interlocutore (bianco) assegnando due classi CSS diverse
 ● Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare
@@ -23,7 +23,7 @@ contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> 
 “mar” rimangono solo Marco e Martina)
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
-✔️ Milestone 5 - opzionale
+✔️ Milestone 5 - opzionale 
 ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
 permette di cancellare il messaggio selezionato
 
