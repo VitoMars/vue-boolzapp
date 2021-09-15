@@ -54,3 +54,5 @@ permette di cancellare il messaggio selezionato
 🐛 BUG RISOLTI:
 
 ● Risolto un bug che permetteva l'invio di messaggi non consentiti come messaggi vuoti
+
+● Risolto un bug che non permetteva l'eliminazione dell'ultimo messaggio
