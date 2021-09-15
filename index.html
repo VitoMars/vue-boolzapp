@@ -107,7 +107,7 @@
                   <div
                      class="message-row"
                      :class="(text.status == `sent`) ? `sent` : `received`"
-                     v-for="text in currentContact.messages"
+                     v-for="(text,index) in currentContact.messages"
                   >
                      <span
                         :class="(text.status == `sent`) ? `my-message` : `your-message`"
@@ -116,6 +116,20 @@
                         <span class="messageDate last-access">
                            {{ text.date }}
                         </span>
+                        <!-- Icona -->
+                        <div class="dropdown-arrow">
+                           <i
+                              class="fas fa-chevron-down"
+                              @click="toggleDropdown(index)"
+                           ></i>
+                        </div>
+
+                        <div class="dropdown-menu">
+                           <span class="message-info">Info</span>
+                           <span class="delete-message"
+                              >Cancella messaggio</span
+                           >
+                        </div>
                      </span>
                   </div>
                </div>
@@ -126,7 +140,7 @@
                      type="text"
                      placeholder="Scrivi un messaggio"
                      v-model="msg"
-                     @keydown.enter="sendMessage()"
+                     @keydown.enter="sendMessage(), receiveMessage()"
                      @keyup.enter="scrollToEnd()"
                   />
                   <i class="fas fa-microphone"></i>

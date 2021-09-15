@@ -91,7 +91,6 @@ const app = new Vue({
       msg: "",
       searchedUser: "",
       filteredContacts: "",
-      scrollTop: "",
    },
    methods: {
       setCurrentUser(contact) {
@@ -133,6 +132,18 @@ const app = new Vue({
          this.filteredContacts = this.contacts.filter((contact) =>
             contact.name.toLowerCase().includes(this.searchedUser.toLowerCase())
          );
+      },
+      toggleDropdown(index) {
+         const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+         if (
+            elDropdowns[index].style.display === "" ||
+            elDropdowns[index].style.display === "none"
+         ) {
+            elDropdowns[index].style.display = "flex";
+         } else if (elDropdowns[index].style.display === "flex") {
+            elDropdowns[index].style.display = "none";
+         }
       },
    },
    created() {
