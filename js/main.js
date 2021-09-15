@@ -129,7 +129,7 @@ const app = new Vue({
             this.scrollToEnd();
          }, 1000);
       },
-      // Metodo per aggiornare la scrollBar dopo 100 ms
+      // Metodo per aggiornare la Scroll-Bar
       scrollToEnd() {
          this.$nextTick(() => {
             const elementHtml = this.$el.querySelector(".chat-area");
@@ -154,6 +154,10 @@ const app = new Vue({
          } else if (elDropdowns[index].style.display === "flex") {
             elDropdowns[index].style.display = "none";
          }
+      },
+      // Metodo per eliminare un messaggio
+      deleteMessage(index) {
+         this.currentContact.messages.splice(index, 1);
       },
    },
    // Settaggi a inizio creazione
