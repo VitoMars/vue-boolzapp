@@ -91,6 +91,7 @@ const app = new Vue({
       msg: "",
       searchedUser: "",
       filteredContacts: "",
+      scrollTop: "",
    },
    methods: {
       setCurrentUser(contact) {
@@ -103,6 +104,10 @@ const app = new Vue({
          this.lastMessage = this.currentContact.messages.length - 1;
          return this.currentContact.messages[this.lastMessage].date;
       },
+      scrollToEnd() {
+         var container = this.$el.querySelector(".chat-area");
+         container.scrollTop = container.scrollHeight;
+      },
       sendMessage() {
          if (this.msg != "") {
             this.currentContact.messages.push({
@@ -112,15 +117,17 @@ const app = new Vue({
             });
          }
          this.msg = "";
+         this.scrollToEnd();
       },
       receiveMessage() {
          setTimeout(() => {
             this.currentContact.messages.push({
                date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
-               message: "Alessio sei il miglior teacher di Boolean 😀",
+               message: "Ciao 😀",
                status: "received",
             });
          }, 1000);
+         this.scrollToEnd();
       },
       searchContact() {
          this.filteredContacts = this.contacts.filter((contact) =>
