@@ -131,10 +131,10 @@ const app = new Vue({
       },
       // Metodo per aggiornare la scrollBar dopo 100 ms
       scrollToEnd() {
-         setTimeout(() => {
-            var container = this.$el.querySelector(".chat-area");
-            container.scrollTop = container.scrollHeight;
-         }, 100);
+         this.$nextTick(() => {
+            const elementHtml = this.$el.querySelector(".chat-area");
+            elementHtml.scrollTop = elementHtml.scrollHeight;
+         });
       },
       // Metodo per cercare fra i contatti
       searchContact() {
