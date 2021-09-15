@@ -91,7 +91,10 @@
                      <img class="avatar" :src="getContactImage()" alt="" />
                      <div class="text">
                         <div class="user-name">{{currentContact.name}}</div>
-                        <div class="last-access">
+                        <div
+                           class="last-access"
+                           v-if="currentContact.messages.length > 0"
+                        >
                            Ultimo messaggio: {{getContactDate()}}
                         </div>
                      </div>
