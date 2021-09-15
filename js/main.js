@@ -91,11 +91,13 @@ const app = new Vue({
       msg: "",
       searchedUser: "",
       filteredContacts: "",
+      message: "",
    },
    methods: {
       // Metodo per settare il contatto selezionato
       setCurrentUser(contact) {
          this.currentContact = contact;
+         this.scrollToEnd();
       },
       // Metodo per ottenere l'immagine del contatto selezionato
       getContactImage() {
@@ -108,12 +110,13 @@ const app = new Vue({
       },
       // Metodo per mandare un messaggio
       sendMessage() {
-         if (this.msg != "") {
+         if (this.msg.trim() != "") {
             this.currentContact.messages.push({
                date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
                message: this.msg,
                status: "sent",
             });
+            this.receiveMessage();
          }
          this.msg = "";
          this.scrollToEnd();
@@ -143,17 +146,22 @@ const app = new Vue({
          );
       },
       // Metodo per far comparire il Dropdown-menu nei messaggi
-      toggleDropdown(index) {
-         const elDropdowns = document.querySelectorAll(".dropdown-menu");
+      toggleDropdown(event) {
+         // const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
          if (
-            elDropdowns[index].style.display === "" ||
-            elDropdowns[index].style.display === "none"
+            event.currentTarget.nextElementSibling.style.display === "" ||
+            event.currentTarget.nextElementSibling.style.display === "none"
          ) {
-            elDropdowns[index].style.display = "flex";
-         } else if (elDropdowns[index].style.display === "flex") {
-            elDropdowns[index].style.display = "none";
+            event.currentTarget.nextElementSibling.style.display = "flex";
+         } else if (
+            event.currentTarget.nextElementSibling.style.display === "flex"
+         ) {
+            event.currentTarget.nextElementSibling.style.display = "none";
          }
+         event.currentTarget.nextElementSibling.focus();
+
+         console.log(event);
       },
       // Metodo per eliminare un messaggio
       deleteMessage(index) {

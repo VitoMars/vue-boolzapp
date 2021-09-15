@@ -120,11 +120,13 @@
                            {{ text.date }}
                         </span>
                         <!-- Icona -->
-                        <div class="dropdown-arrow">
-                           <i
-                              class="fas fa-chevron-down"
-                              @click="toggleDropdown(index)"
-                           ></i>
+                        <div
+                           class="dropdown-arrow"
+                           tabindex="-1"
+                           @click="toggleDropdown($event)"
+                           @blur="toggleDropdown($event)"
+                        >
+                           <i class="fas fa-chevron-down"></i>
                         </div>
 
                         <div class="dropdown-menu">
@@ -145,7 +147,7 @@
                      type="text"
                      placeholder="Scrivi un messaggio"
                      v-model="msg"
-                     @keydown.enter="sendMessage(), receiveMessage()"
+                     @keydown.enter="sendMessage()"
                   />
                   <i class="fas fa-microphone"></i>
                </div>
