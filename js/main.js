@@ -167,5 +167,20 @@ const app = new Vue({
    created() {
       this.currentContact = this.contacts[0];
       this.filteredContacts = this.contacts;
+
+      // Ascoltatore per chiudere i dropdown-menu quando si clicca su un altro punto della pagina
+      document.addEventListener(
+         "click",
+         function () {
+            const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+            elDropdowns.forEach((dropdown) => {
+               if (dropdown.style.display === "flex") {
+                  dropdown.style.display = "none";
+               }
+            });
+         },
+         true
+      );
    },
 });
