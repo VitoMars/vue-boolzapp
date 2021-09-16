@@ -86,6 +86,17 @@ const app = new Vue({
             ],
          },
       ],
+      randomAnswers: [
+         "Ciao 😀",
+         "Ti amo ❤️",
+         "Ahahahaha 😂",
+         "Sei fantastico! 😘",
+         "Ho fatto la cacca 💩",
+         "Ho fatto tantissima cacca 💩💩💩",
+         "Bellissima app, complimenti! 💪🏻",
+         "Non vedo 🙈, non sento 🙉, non parlo 🙊",
+         "Alessio sei il miglior teacher di Boolean 😘",
+      ],
       currentContact: null,
       lastDate: "",
       msg: "",
@@ -125,7 +136,10 @@ const app = new Vue({
          setTimeout(() => {
             this.currentContact.messages.push({
                date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
-               message: "Ciao 😀",
+               message:
+                  this.randomAnswers[
+                     Math.floor(Math.random() * this.randomAnswers.length)
+                  ],
                status: "received",
             });
             this.scrollToEnd();

@@ -1,4 +1,4 @@
---------------------------------------------------------------------------------------
+---
 
 ✔️ MILESTONE 1:
 
@@ -37,19 +37,21 @@ permette di cancellare il messaggio selezionato
 
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
---------------------------------------------------------------------------------------
+---
 
 ✨ ALTRI BONUS:
 
-● Chiusura DropDown quando si clicca in una qualsiasi altra area della pagina 
+● Chiusura DropDown quando si clicca in una qualsiasi altra area della pagina
 
 ● Sroll automatico all'ultimo messaggio
+
+● Aggiunte risposte randomiche quando ricevi un messaggio
 
 ● Colorazione della lista di contatti quando si ci passa il mouse e quando si seleziona
 
 ● Inseirimento icona nell'HTML
 
---------------------------------------------------------------------------------------
+---
 
 🐛 BUG RISOLTI:
 
