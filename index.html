@@ -54,7 +54,9 @@
                   <i class="fas fa-bell-slash"></i>
                   <div class="text">
                      <div>Ricevi notifiche di nuovi messaggi</div>
-                     <div class="little-text">Attiva notifiche desktop</div>
+                     <div class="little-text underline">
+                        Attiva notifiche desktop
+                     </div>
                   </div>
                </div>
                <!-- Cerca fra i contatti -->
@@ -74,7 +76,7 @@
                <!-- Lista Contatti -->
                <div class="contacts-list">
                   <div
-                     v-for="contact in contacts"
+                     v-for="(contact, index) in contacts"
                      :class="(contact == currentContact) ? `selected` : ``"
                      class="contact border-top"
                      @click="setCurrentUser(contact), getContactDate()"
@@ -87,6 +89,9 @@
                      />
                      <div class="text">
                         <div>{{contact.name}}</div>
+                        <div class="little-text">
+                           {{ getLastMessage(index) }}
+                        </div>
                      </div>
                   </div>
                </div>

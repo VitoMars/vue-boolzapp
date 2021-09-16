@@ -110,8 +110,11 @@ body {
 .little-text {
    font-size: 14px;
    cursor: pointer;
-   text-decoration: underline;
    color: grey;
+}
+
+.underline {
+   text-decoration: underline;
 }
 
 .search-container {
