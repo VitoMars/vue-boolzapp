@@ -74,10 +74,11 @@
                <!-- Lista Contatti -->
                <div class="contacts-list">
                   <div
-                     v-for="contact in filteredContacts"
+                     v-for="contact in contacts"
                      :class="(contact == currentContact) ? `selected` : ``"
                      class="contact border-top"
                      @click="setCurrentUser(contact), getContactDate()"
+                     v-if="contact.visible"
                   >
                      <img
                         class="avatar"

@@ -90,7 +90,6 @@ const app = new Vue({
       lastMessage: "",
       msg: "",
       searchedUser: "",
-      filteredContacts: "",
       message: "",
    },
    methods: {
@@ -141,9 +140,17 @@ const app = new Vue({
       },
       // Metodo per cercare fra i contatti
       searchContact() {
-         this.filteredContacts = this.contacts.filter((contact) =>
-            contact.name.toLowerCase().includes(this.searchedUser.toLowerCase())
-         );
+         this.contacts.forEach((contact) => {
+            if (
+               contact.name
+                  .toLowerCase()
+                  .includes(this.searchedUser.toLowerCase())
+            ) {
+               contact.visible = true;
+            } else {
+               contact.visible = false;
+            }
+         });
       },
       // Metodo per far comparire il Dropdown-menu nei messaggi
       toggleDropdown(index) {
@@ -166,7 +173,6 @@ const app = new Vue({
    // Settaggi a inizio creazione
    created() {
       this.currentContact = this.contacts[0];
-      this.filteredContacts = this.contacts;
 
       // Ascoltatore per chiudere i dropdown-menu quando si clicca su un altro punto della pagina
       document.addEventListener(
