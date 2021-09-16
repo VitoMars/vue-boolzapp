@@ -76,7 +76,7 @@
                <!-- Lista Contatti -->
                <div class="contacts-list">
                   <div
-                     v-for="(contact, index) in contacts"
+                     v-for="contact in contacts"
                      :class="(contact == currentContact) ? `selected` : ``"
                      class="contact border-top"
                      @click="setCurrentUser(contact), getContactDate()"
@@ -89,8 +89,10 @@
                      />
                      <div class="text">
                         <div>{{contact.name}}</div>
+                        <!-- Ho dovuto scrivere in questo modo per un problema con vue.js -->
                         <div class="little-text">
-                           {{ getLastMessage(index) }}
+                           {{ contact.messages[contact.messages.length -
+                           1].message }}
                         </div>
                      </div>
                   </div>

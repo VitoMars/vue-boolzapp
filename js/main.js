@@ -88,8 +88,6 @@ const app = new Vue({
       ],
       currentContact: null,
       lastDate: "",
-      lastMessage: "",
-      last: "",
       msg: "",
       searchedUser: "",
       message: "",
@@ -107,16 +105,7 @@ const app = new Vue({
       // Metodo per ottenere la data
       getContactDate() {
          this.lastDate = this.currentContact.messages.length - 1;
-         return this.currentContact.messages[this.lastMessage].date;
-      },
-      // Metodo per ottenere l'ultimo messaggio
-      getLastMessage(index) {
-         this.lastMessage = this.contacts[index].messages.length - 1;
-         this.last = this.contacts[index].messages[this.lastMessage].message;
-         if (this.last.length > 40) {
-            this.last = this.last.slice(0, 40) + "...";
-         }
-         return this.last;
+         return this.currentContact.messages[this.lastDate].date;
       },
       // Metodo per mandare un messaggio
       sendMessage() {
