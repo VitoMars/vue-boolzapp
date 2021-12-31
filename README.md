@@ -47,7 +47,7 @@ permette di cancellare il messaggio selezionato
 
 ● Colorazione della lista di contatti quando si ci passa il mouse e quando si seleziona
 
-● Inseirimento icona nell'HTML
+● Inserimento icona nell'HTML
 
 ---
 
